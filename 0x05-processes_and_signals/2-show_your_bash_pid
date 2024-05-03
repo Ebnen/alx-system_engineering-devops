@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#A bash script that display lines containing the bash words
+
+ps aux | grep bash | grep -v "grep bash" | grep -v "$$"
