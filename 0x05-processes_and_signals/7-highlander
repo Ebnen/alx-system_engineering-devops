@@ -6,10 +6,13 @@ sigterm_handler() {
     exit 0
 }
 
-
+display_message() {
 trap 'sigterm_handler' SIGTERM
 
 while true; do
     echo "To infinity and beyond"
     sleep 2
 done
+}
+
+display_message
