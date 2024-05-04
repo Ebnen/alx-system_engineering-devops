@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# bash script that terminate 
+
+pid=$(pgrep -f "7-highlander")
+
+
+if [ -n "$pid" ]; then
+    kill "$pid" >/dev/null 2>&1
+fi
