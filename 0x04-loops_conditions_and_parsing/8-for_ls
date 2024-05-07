@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# bash script that list all file in God
+
+     
+    for item in *; do
+	      if [[ -f "$item" && ! "$item" =~ ^\. ]]; then
+		       name_after_dash="${item#*-}"
+		          echo "$name_after_dash"
+	      fi	
+
+
+      done	      

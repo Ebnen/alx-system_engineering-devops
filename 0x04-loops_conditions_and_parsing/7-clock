@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# bash script that tells the time 
+
+ 
+  hour=0
+  
+ while [ $hour -le 12 ]; do
+  min=1
+   echo "Hour: $hour"
+     while [ $min -le 59 ]; do
+	     echo "$min"
+	     min=$((min + 1))
+      done
+
+      hour=$((hour + 1))
+  done
+         
+ 
