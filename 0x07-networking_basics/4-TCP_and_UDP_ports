@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# displaying listenning port
+
+sudo netstat -tuln | awk 'NR>2 && $6 == "LISTEN" {print $1, $4, $7}' | while read -r protocol local_address pid_program; do
+      pid=$(echo "$pid_program" | awk -F'/' '{print $1}')
+    program=$(echo "$pid_program" | awk -F'/' '{print $2}')
+    program_name=$(ps -p "$pid" -o comm=)
+   echo "$protocol $local_address $program_name"
+
+done
