@@ -1,0 +1,5 @@
+
+FROM ubuntu:latest
+COPY 0-change_your_home_IP /tmp/0-change_your_home_IP
+RUN chmod +x /tmp/0-change_your_home_IP
+CMD /tmp/0-change_your_home_IP
