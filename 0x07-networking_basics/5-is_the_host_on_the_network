@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # ping a network
 
- if (( $# -eq 1 )); then
-	 ping -c 5 "$#"
+ if (( $# == 1 )); then
+	 ping -c 5 "$1"
 
  else 
 	 echo "you shit"
