@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
---- we ldealefs vjsdkjvnsjnnvsjkkaj 
+# we ldealefs vjsdkjvnsjnnvsjkkaj 
 
-SERVER_ADDRESS="490991-web-01"
-
-ssh -i ~/.ssh/school ubuntu@$SERVER_ADDRESS
+ssh ubuntu@34.232.67.223 -i ~/.ssh/school
