@@ -1,11 +1,4 @@
 #!/bin/env bash
-# creating a private key
+# creating a private keY
 
-NAME="school"
-BITS=4096
-PHRASE="betty"
-PATH="$HOME/.ssh/$KEY_NAME"
-
-mkdir -p $HOME/.ssh
-
-ssh-keygen -t rsa -b $BITS -f $PATH -N "$PHRASE"
+ssh-keygen -b 4096 -f school -t rsa -P betty
