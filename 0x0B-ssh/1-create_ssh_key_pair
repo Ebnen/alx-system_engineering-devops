@@ -1,4 +1,3 @@
 #!/bin/env bash
 # creating a private keY
-
-ssh-keygen -t rsa -b 4096 -N betty -f /root/.ssh/school
+ssh-keygen -b 4096 -N betty -f school 
