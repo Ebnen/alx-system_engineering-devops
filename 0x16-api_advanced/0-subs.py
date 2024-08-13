@@ -5,7 +5,7 @@ import requests
 
 def number_of_subscribers(subreddit):
     """funtion to write the following code"""
-    url = "https://www.reddit.com/r/{}/about.json".formart(subreddit)
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     headers = {'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}
     ok = requests.get(url, headers=headers, allow_redirects=False)
     subs = 0
