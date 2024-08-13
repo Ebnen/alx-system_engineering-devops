@@ -8,8 +8,14 @@ def number_of_subscribers(subreddit):
     url = f"https://api.reddit.com/r/{subreddit}/about.json"
     headers = {'User-Agent': 'Mozilla/5.0'}
     ok = requests.get(url, headers=headers, allow_redirects=False)
+    subs = 0
     if ok.status_code == 200:
-        rabi = ok.json()
-        return rabi['data']['subscribers']
-    else:
-        return 0
+        try:
+            rabi = ok.json()
+            data = rabi.get('data')
+            subs = data.get('subscribers')
+        except Exception:
+            pass
+        finally:
+            return subs
+    return subs
