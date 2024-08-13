@@ -5,8 +5,8 @@ import requests
 
 def number_of_subscribers(subreddit):
     """funtion to write the following code"""
-    url = f"https://api.reddit.com/r/{subreddit}/about.json"
-    headers = {'User-Agent': 'Mozilla/5.0', 'Accept': 'application/.json'}
+    url = "https://www.reddit.com/r/{}/about.json".formart(subreddit)
+    headers = {'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}
     ok = requests.get(url, headers=headers, allow_redirects=False)
     subs = 0
     if ok.status_code == 200:
