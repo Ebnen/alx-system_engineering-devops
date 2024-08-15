@@ -1,18 +1,20 @@
 #!/usr/bin/python3
-"""Write a function that queries the Reddit"""
-import requests
+import requests as r
 
 
 def top_ten(subreddit):
-    """a function that print out """
-    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
-    headers = {"User-Agent": "Mozilla/5.0"}
-    res = requests.get(url, headers=headers, allow_redirects=False)
-    if res.status_code == 200:
-        abga = res.json()
-        posts = abga['data']['children']
-        for post in posts:
-            print(post['data']['title'])
+    """
+    queries the Reddit API and prints the titles of the first 10 hot posts
+    """
+    headers = {"User-Agent": "Frocuts"}
+    endpoint = "http://reddit.com/r/{}/hot.json?limit=10"
+    subs = r.get(endpoint.format(subreddit), headers=headers)
+    if subs.status_code != 200:
+        print(None)
+        return 0
+    subs = subs.json()
+    if subs["kind"] == "Listing":
+        for data in subs["data"]["children"]:
+            print(data["data"]["title"])
     else:
-        print('None')
-        return
+        print(None)
